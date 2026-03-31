@@ -1,0 +1,15 @@
+﻿# Python virtual env
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local DB and env
+flodo.db
+.env
+test_flodo.db
+
+# Build artifacts
+*.log
