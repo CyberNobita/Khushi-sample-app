@@ -13,3 +13,12 @@ test_flodo.db
 
 # Build artifacts
 *.log
+
+# Flutter
+flodo_app/.dart_tool/
+flodo_app/build/
+flodo_app/.idea/
+flodo_app/.flutter-plugins
+flodo_app/.flutter-plugins-dependencies
+flodo_app/android/.gradle/
+.vercel

@@ -1,43 +1,72 @@
-﻿# Khushi Sample App Backend (Production Ready)
+﻿# Khushi Sample App (Flutter + FastAPI)
 
-FastAPI backend for Flodo task management app.
+Production-ready task management app with:
+- Flutter frontend (`flodo_app`)
+- FastAPI backend (`/` root)
+- PostgreSQL (Neon) database support
 
-## Features
+## Live Deployments
 
-- Async FastAPI API (`/api/v1/tasks`)
-- PostgreSQL ready (Neon/Supabase style URL)
-- SQLite fallback for local development
-- Task dependency (`blocked_by_id`) with computed `is_blocked`
-- Auto schema create at startup
-- Pytest coverage for core CRUD/blocked flows
+- Frontend (Vercel): https://flodo-web.vercel.app
+- Backend (Vercel): https://khushi.sbpgm.com
+- Backend Docs: https://khushi.sbpgm.com/docs
 
-## Local Setup
+## Track & Stretch Goal
+
+- **Track Chosen:** **A** (Full-Stack: Flutter + FastAPI + PostgreSQL)
+- **Stretch Goal Chosen:** **Debounced Autocomplete Search** (implemented in task search flow)
+
+## Step-by-Step Setup Instructions
+
+### 1. Backend Setup (FastAPI)
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
 Copy-Item .env.example .env
+# Set DATABASE_URL in .env
 .\.venv\Scripts\python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Open docs at: `http://localhost:8000/docs`
+Open: `http://localhost:8000/docs`
 
-## Production Environment Variables
+### 2. Flutter App Setup
 
-- `DATABASE_URL`
-- `CORS_ORIGINS` (e.g. `https://your-web-app.vercel.app,https://your-web-app.web.app`)
-- `SQL_ECHO=false`
+```powershell
+cd flodo_app
+flutter pub get
+flutter run -d chrome
+```
 
-## Deploy on Render
+Default production API in app config: `https://khushi.sbpgm.com/api/v1`
 
-1. Push this repo to GitHub.
-2. In Render, create a new Blueprint deploy from this repo.
-3. Render will pick `render.yaml` automatically.
-4. Add `DATABASE_URL` in Render env vars.
-5. Deploy.
+For Android:
 
-## Test
+```powershell
+flutter run -d <device-id>
+```
+
+### 3. Testing
+
+Backend:
 
 ```powershell
 .\.venv\Scripts\python -m pytest -q
 ```
+
+Flutter:
+
+```powershell
+cd flodo_app
+flutter analyze
+flutter test
+```
+
+## AI Usage Report
+
+AI was used mainly for:
+- Flutter UI implementation and responsive UX refinements (grid, mobile FAB placement, overflow fixes).
+- UX polish decisions for task cards, search/filter layout, and mobile behavior.
+- Minor automation help for deployment commands and environment wiring.
+
+No external proprietary code was copied; all app logic and integration were implemented and validated in this repository.
