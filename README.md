@@ -70,3 +70,8 @@ AI was used mainly for:
 - Minor automation help for deployment commands and environment wiring.
 
 No external proprietary code was copied; all app logic and integration were implemented and validated in this repository.
+
+## Additional Submission Docs
+
+- Detailed company submission doc: `COMPANY_SUBMISSION_DOC.md`
+- Quick copy notes: `SUBMISSION_NOTES.md`
