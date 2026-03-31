@@ -11,7 +11,7 @@ The app supports creating, updating, deleting, searching, filtering, and depende
 
 ## 2. Live Deployment Links
 
-- Frontend (Web): https://flodo-web.vercel.app
+- Frontend (Web): https://flodo.sbpgm.com
 - Backend (API): https://khushi.sbpgm.com
 - Backend API Docs (Swagger): https://khushi.sbpgm.com/docs
 
